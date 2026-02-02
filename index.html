@@ -41,7 +41,6 @@
             padding: 0 20px;
         }
 
-        /* Header */
         header {
             background: linear-gradient(135deg, var(--bg-dark) 0%, #1a1a2e 100%);
             border-bottom: 1px solid var(--border);
@@ -56,6 +55,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
         .logo {
@@ -129,7 +130,6 @@
             50% { opacity: 0.5; transform: scale(1.2); }
         }
 
-        /* Countdown */
         .next-update {
             background: var(--bg-card);
             padding: 8px 16px;
@@ -151,7 +151,6 @@
             font-family: monospace;
         }
 
-        /* Navigation */
         nav {
             background: var(--bg-card);
             padding: 12px 0;
@@ -192,7 +191,6 @@
             color: white;
         }
 
-        /* Main Content */
         main {
             padding: 30px 0;
         }
@@ -226,7 +224,6 @@
             background: var(--success);
         }
 
-        /* Key Points Section */
         .key-points {
             background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
             border: 1px solid var(--primary);
@@ -293,7 +290,127 @@
             background: var(--success);
         }
 
-        /* VIP Quotes Section */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .news-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .news-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .news-card-header {
+            padding: 20px 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .news-category {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .category-finance { background: rgba(245, 158, 11, 0.2); color: var(--warning); }
+        .category-product { background: rgba(6, 182, 212, 0.2); color: var(--accent); }
+        .category-regulation { background: rgba(239, 68, 68, 0.2); color: var(--danger); }
+        .category-investment { background: rgba(16, 185, 129, 0.2); color: var(--success); }
+        .category-tech { background: rgba(124, 58, 237, 0.2); color: var(--secondary); }
+        .category-vip { background: rgba(251, 191, 36, 0.2); color: var(--gold); }
+
+        .news-date {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .new-badge {
+            background: var(--success);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            font-weight: bold;
+        }
+
+        .news-card-body {
+            padding: 16px 20px;
+        }
+
+        .news-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .news-card h3 a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .news-card h3 a:hover {
+            color: var(--primary);
+        }
+
+        .news-card-footer {
+            padding: 16px 20px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .news-source {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .source-icon {
+            width: 20px;
+            height: 20px;
+            background: var(--bg-card-hover);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+        }
+
+        .read-more {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: gap 0.3s;
+        }
+
+        .read-more:hover {
+            gap: 8px;
+        }
+
         .vip-section {
             background: linear-gradient(135deg, rgba(251, 191, 36, 0.1) 0%, rgba(245, 158, 11, 0.1) 100%);
             border: 1px solid var(--gold);
@@ -392,228 +509,6 @@
             text-decoration: none;
         }
 
-        .quote-source:hover {
-            text-decoration: underline;
-        }
-
-        /* Forum Section */
-        .forum-section {
-            background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
-            border: 1px solid var(--secondary);
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 40px;
-        }
-
-        .forum-section .section-title {
-            border-bottom-color: var(--secondary);
-        }
-
-        .forum-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-        }
-
-        .forum-card {
-            background: var(--bg-card);
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid var(--border);
-            transition: all 0.3s;
-        }
-
-        .forum-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--secondary);
-        }
-
-        .forum-header {
-            padding: 20px;
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
-        }
-
-        .forum-header h3 {
-            color: white;
-            font-size: 1.2rem;
-            margin-bottom: 4px;
-        }
-
-        .forum-header span {
-            color: rgba(255,255,255,0.8);
-            font-size: 0.85rem;
-        }
-
-        .forum-body {
-            padding: 20px;
-        }
-
-        .forum-highlight {
-            background: var(--bg-card-hover);
-            border-radius: 8px;
-            padding: 12px;
-            margin-bottom: 12px;
-        }
-
-        .forum-highlight h4 {
-            font-size: 0.9rem;
-            color: var(--accent);
-            margin-bottom: 8px;
-        }
-
-        .forum-highlight p {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-        }
-
-        .forum-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            color: var(--primary);
-            text-decoration: none;
-            font-size: 0.9rem;
-            margin-top: 12px;
-        }
-
-        .forum-link:hover {
-            text-decoration: underline;
-        }
-
-        /* News Grid */
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-            gap: 24px;
-            margin-bottom: 40px;
-        }
-
-        .news-card {
-            background: var(--bg-card);
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid var(--border);
-            transition: all 0.3s;
-        }
-
-        .news-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--primary);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .news-card.featured {
-            border-color: var(--gold);
-        }
-
-        .news-card-header {
-            padding: 20px 20px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-
-        .news-category {
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-
-        .category-finance { background: rgba(245, 158, 11, 0.2); color: var(--warning); }
-        .category-product { background: rgba(6, 182, 212, 0.2); color: var(--accent); }
-        .category-regulation { background: rgba(239, 68, 68, 0.2); color: var(--danger); }
-        .category-investment { background: rgba(16, 185, 129, 0.2); color: var(--success); }
-        .category-tech { background: rgba(124, 58, 237, 0.2); color: var(--secondary); }
-        .category-forum { background: rgba(251, 191, 36, 0.2); color: var(--gold); }
-        .category-vip { background: rgba(251, 191, 36, 0.2); color: var(--gold); }
-
-        .news-date {
-            color: var(--text-secondary);
-            font-size: 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .new-badge {
-            background: var(--success);
-            color: white;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-size: 0.65rem;
-            font-weight: bold;
-        }
-
-        .news-card-body {
-            padding: 16px 20px;
-        }
-
-        .news-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 12px;
-            line-height: 1.4;
-        }
-
-        .news-card h3 a {
-            color: var(--text-primary);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .news-card h3 a:hover {
-            color: var(--primary);
-        }
-
-        .news-summary {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-bottom: 16px;
-        }
-
-        .news-card-footer {
-            padding: 16px 20px;
-            border-top: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .news-source {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-        }
-
-        .source-icon {
-            width: 20px;
-            height: 20px;
-            background: var(--bg-card-hover);
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 10px;
-        }
-
-        .read-more {
-            color: var(--primary);
-            text-decoration: none;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            transition: gap 0.3s;
-        }
-
-        .read-more:hover {
-            gap: 8px;
-        }
-
-        /* Finance Section */
         .finance-section {
             background: linear-gradient(135deg, rgba(245, 158, 11, 0.05) 0%, rgba(239, 68, 68, 0.05) 100%);
             border-radius: 20px;
@@ -625,7 +520,6 @@
             border-bottom-color: var(--warning);
         }
 
-        /* Stats Grid */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -661,64 +555,7 @@
         }
 
         .stat-change.up { color: var(--success); }
-        .stat-change.down { color: var(--danger); }
 
-        /* Timeline */
-        .timeline {
-            position: relative;
-            padding-left: 30px;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 8px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--border);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 24px;
-            padding-left: 20px;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -26px;
-            top: 6px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--primary);
-            border: 2px solid var(--bg-dark);
-        }
-
-        .timeline-item.current::before {
-            background: var(--success);
-            box-shadow: 0 0 10px var(--success);
-        }
-
-        .timeline-date {
-            font-size: 0.8rem;
-            color: var(--accent);
-            margin-bottom: 4px;
-        }
-
-        .timeline-content h4 {
-            font-size: 1rem;
-            margin-bottom: 4px;
-        }
-
-        .timeline-content p {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-        }
-
-        /* Footer */
         footer {
             background: var(--bg-card);
             border-top: 1px solid var(--border);
@@ -758,26 +595,17 @@
             font-size: 0.85rem;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .news-grid {
                 grid-template-columns: 1fr;
             }
-
             .quotes-grid {
                 grid-template-columns: 1fr;
             }
-
             .header-content {
                 flex-direction: column;
                 gap: 16px;
             }
-
-            .header-right {
-                flex-direction: column;
-                align-items: center;
-            }
-
             .nav-links {
                 justify-content: center;
             }
@@ -803,9 +631,9 @@
                     <div class="update-info">
                         <div class="update-time">
                             <span class="live-dot"></span>
-                            <span>最后更新: <span id="lastUpdate">2026年1月27日 14:30</span></span>
+                            <span>最后更新: 2026年2月2日 09:42</span>
                         </div>
-                        <div class="week-range" id="weekRange">本周关注: 1月21日 - 1月27日</div>
+                        <div class="week-range">本周关注: 1月27日 - 2月2日</div>
                         <div class="auto-update-badge">每日自动更新</div>
                     </div>
                 </div>
@@ -818,66 +646,64 @@
             <div class="nav-links">
                 <a class="nav-link active" href="#all">全部资讯</a>
                 <a class="nav-link hot" href="#vip">大咖言论</a>
-                <a class="nav-link hot" href="#forums">科技论坛</a>
                 <a class="nav-link" href="#finance">金融应用</a>
                 <a class="nav-link" href="#products">产品发布</a>
-                <a class="nav-link" href="#investment">投资动态</a>
-                <a class="nav-link" href="#regulation">监管政策</a>
+                <a class="nav-link" href="#global">全球动态</a>
             </div>
         </div>
     </nav>
 
     <main class="container">
-        <!-- Key Points Section -->
+        <!-- Key Points -->
         <section class="key-points">
-            <h3>&#128161; 本周核心要点 (1月21日-27日)</h3>
+            <h3>&#128161; 本周核心要点 (1月27日-2月2日)</h3>
             <ul>
                 <li>
                     <span class="bullet">1</span>
                     <span class="point-text">
-                        <strong>Elon Musk达沃斯首秀：宣称2026年为"奇点之年"</strong> - 预测今年AI将超越任何人类智能，AGI将在2026年实现
+                        <strong>Google News - Artificial intelligence - Latest</strong>
                         <span class="point-tag urgent">重磅</span>
                     </span>
                 </li>
                 <li>
                     <span class="bullet">2</span>
                     <span class="point-text">
-                        <strong>Dario Amodei vs Demis Hassabis：AGI时间表激烈交锋</strong> - Anthropic CEO预测12-24个月，DeepMind CEO认为需5-10年
-                        <span class="point-tag">达沃斯</span>
+                        <strong>AI News &amp; Artificial Intelligence | TechCrunch</strong>
+                        <span class="point-tag urgent">重磅</span>
                     </span>
                 </li>
                 <li>
                     <span class="bullet">3</span>
                     <span class="point-text">
-                        <strong>CES 2026：NVIDIA发布Vera Rubin平台</strong> - 相比Grace Blackwell吞吐量提升10倍，"Physical AI"成为核心主题
-                        <span class="point-tag new">新品</span>
+                        <strong>AI News | Latest Headlines and Developments | Reuters</strong>
+                        <span class="point-tag new">新闻</span>
                     </span>
                 </li>
                 <li>
                     <span class="bullet">4</span>
                     <span class="point-text">
-                        <strong>IMF警告：40%工作岗位受AI影响</strong> - 总裁Georgieva称AI扩张如"海啸"冲击劳动力市场
-                        <span class="point-tag urgent">警示</span>
+                        <strong>OpenAI News</strong>
+                        <span class="point-tag new">新闻</span>
                     </span>
                 </li>
                 <li>
                     <span class="bullet">5</span>
                     <span class="point-text">
-                        <strong>82%银行AI投资将增长25%+</strong> - 合规和反洗钱成为核心投资领域，Agentic AI成金融新宠
-                        <span class="point-tag">金融</span>
+                        <strong>Bye Bye, ChatGPT-4o: OpenAI Will Soon Retire Several Models ... - CNET</strong>
+                        <span class="point-tag ">关注</span>
                     </span>
                 </li>
                 <li>
                     <span class="bullet">6</span>
                     <span class="point-text">
-                        <strong>OpenAI计划2026下半年推出首款消费设备</strong> - Chris Lehane在达沃斯透露，音频AI战略加速推进
-                        <span class="point-tag new">独家</span>
+                        <strong>OpenAI is retiring famous GPT-4o model, says GPT 5.2 is good enough</strong>
+                        <span class="point-tag ">关注</span>
                     </span>
                 </li>
             </ul>
         </section>
 
-        <!-- VIP Quotes Section -->
+        <!-- VIP Quotes -->
         <section class="vip-section" id="vip">
             <div class="section-title">
                 <h2>&#127775; AI大咖言论</h2>
@@ -886,49 +712,18 @@
             <div class="quotes-grid">
                 <div class="quote-card">
                     <div class="quote-author">
-                        <div class="author-avatar">EM</div>
+                        <div class="author-avatar">SA</div>
                         <div class="author-info">
-                            <h4>Elon Musk</h4>
-                            <span>Tesla & xAI CEO</span>
+                            <h4>Sam Altman</h4>
+                            <span>OpenAI CEO</span>
                         </div>
                     </div>
-                    <p class="quote-text">今年AI可能比任何人都聪明，最迟不会超过明年。2026是"奇点之年"，到2030年AI智能将超过全人类智能总和。</p>
+                    <p class="quote-text">OpenAI CEO Sam Altman Says ICE Is &#x27;Going Too Far&#x27; In ... - HuffPost</p>
                     <div class="quote-meta">
-                        <span>达沃斯论坛 | 1月23日</span>
-                        <a href="https://www.panewslab.com/en/articles/c4150b3d-cc05-4d60-9615-d47c01fa1d55" target="_blank" class="quote-source">查看来源</a>
+                        <span>2月</span>
+                        <a href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.huffpost.com%2Fentry%2Ftech%2Dice%2Dtrump_n_69799081e4b05884820b5123&amp;rut=e903639931f024ca434057df97967842a2ef4dde81aa738c8a18a2e36a680052" target="_blank" class="quote-source">查看来源</a>
                     </div>
                 </div>
-
-                <div class="quote-card">
-                    <div class="quote-author">
-                        <div class="author-avatar">DA</div>
-                        <div class="author-info">
-                            <h4>Dario Amodei</h4>
-                            <span>Anthropic CEO</span>
-                        </div>
-                    </div>
-                    <p class="quote-text">AI模型将在一年内取代所有软件开发者的工作，两年内在多个领域达到"诺贝尔奖级别"的科研水平。我们正在敲开不可思议能力的大门。</p>
-                    <div class="quote-meta">
-                        <span>达沃斯论坛 | 1月23日</span>
-                        <a href="https://fortune.com/2026/01/23/deepmind-demis-hassabis-anthropic-dario-amodei-yann-lecun-ai-davos/" target="_blank" class="quote-source">查看来源</a>
-                    </div>
-                </div>
-
-                <div class="quote-card">
-                    <div class="quote-author">
-                        <div class="author-avatar">DH</div>
-                        <div class="author-info">
-                            <h4>Demis Hassabis</h4>
-                            <span>Google DeepMind CEO</span>
-                        </div>
-                    </div>
-                    <p class="quote-text">当今AI系统距离人类级AGI"还差很远"。真正的AGI需要5到10年。我们每天都和Pichai通话，在激烈竞争中快速调整路线图。</p>
-                    <div class="quote-meta">
-                        <span>达沃斯论坛 | 1月23日</span>
-                        <a href="https://www.cnbc.com/2026/01/16/deepmind-google-ai-competition-demis-hassabis.html" target="_blank" class="quote-source">查看来源</a>
-                    </div>
-                </div>
-
                 <div class="quote-card">
                     <div class="quote-author">
                         <div class="author-avatar">JH</div>
@@ -937,58 +732,26 @@
                             <span>NVIDIA CEO</span>
                         </div>
                     </div>
-                    <p class="quote-text">AI的真正影响将取决于它被多广泛地构建、采用和使用。Physical AI让机器人和自主系统能够以人类级别的精度导航真实世界。</p>
+                    <p class="quote-text">OpenAI&#x27;s Altman tells employees &#x27;ICE is going too far&#x27; after ... - Yahoo</p>
                     <div class="quote-meta">
-                        <span>CES & 达沃斯 | 1月</span>
-                        <a href="https://www.weforum.org/stories/2026/01/nvidia-ceo-jensen-huang-on-the-future-of-ai/" target="_blank" class="quote-source">查看来源</a>
+                        <span>2月</span>
+                        <a href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.yahoo.com%2Fnews%2Farticles%2Fopenais%2Daltman%2Dtells%2Demployees%2Dice%2D023701807.html&amp;rut=778ce215220fa5cc1222778719821550ab2fc4b9d230434df8b4934da6777f7f" target="_blank" class="quote-source">查看来源</a>
                     </div>
                 </div>
-
                 <div class="quote-card">
                     <div class="quote-author">
-                        <div class="author-avatar">KG</div>
+                        <div class="author-avatar">SP</div>
                         <div class="author-info">
-                            <h4>Kristalina Georgieva</h4>
-                            <span>IMF总裁</span>
+                            <h4>Sundar Pichai</h4>
+                            <span>Google CEO</span>
                         </div>
                     </div>
-                    <p class="quote-text">平均40%的工作岗位受到AI影响，要么被增强，要么被淘汰，要么显著改变。AI扩张就像一场海啸冲击劳动力市场。即使最准备充分的国家也准备不足。</p>
+                    <p class="quote-text">Sam Altman says &#x27;what&#x27;s happening with ICE is going too far&#x27;: Reports</p>
                     <div class="quote-meta">
-                        <span>达沃斯论坛 | 1月22日</span>
-                        <a href="https://finance.yahoo.com/news/at-davos-fears-about-ai-driven-job-loss-take-center-stage-124805401.html" target="_blank" class="quote-source">查看来源</a>
+                        <span>2月</span>
+                        <a href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fthehill.com%2Fpolicy%2Ftechnology%2F5708994%2Dsam%2Daltman%2Dsays%2Dwhats%2Dhappening%2Dwith%2Dice%2Dis%2Dgoing%2Dtoo%2Dfar%2Dreports%2F&amp;rut=0a52de61dccee8f8b4f3099c2bc985ba7cff628d5b09490c23b18b1ea212726a" target="_blank" class="quote-source">查看来源</a>
                     </div>
                 </div>
-
-                <div class="quote-card">
-                    <div class="quote-author">
-                        <div class="author-avatar">SA</div>
-                        <div class="author-info">
-                            <h4>Sam Altman</h4>
-                            <span>OpenAI CEO</span>
-                        </div>
-                    </div>
-                    <p class="quote-text">有时你抱怨ChatGPT限制太多，有时又说它太宽松。2026年的优先事项是缩小AI能力与人们日常使用之间的差距。</p>
-                    <div class="quote-meta">
-                        <span>社交媒体回应 | 1月20日</span>
-                        <a href="https://www.cnbc.com/2026/01/19/openai-to-focus-on-practical-adoption-in-2026-says-finance-chief-sarah-friar.html" target="_blank" class="quote-source">查看来源</a>
-                    </div>
-                </div>
-
-                <div class="quote-card">
-                    <div class="quote-author">
-                        <div class="author-avatar">YL</div>
-                        <div class="author-info">
-                            <h4>Yann LeCun</h4>
-                            <span>Meta首席AI科学家</span>
-                        </div>
-                    </div>
-                    <p class="quote-text">支撑所有领先AI模型的大语言模型永远无法实现类人智能，需要一种完全不同的方法。</p>
-                    <div class="quote-meta">
-                        <span>达沃斯论坛 | 1月23日</span>
-                        <a href="https://fortune.com/2026/01/23/deepmind-demis-hassabis-anthropic-dario-amodei-yann-lecun-ai-davos/" target="_blank" class="quote-source">查看来源</a>
-                    </div>
-                </div>
-
                 <div class="quote-card">
                     <div class="quote-author">
                         <div class="author-avatar">SN</div>
@@ -997,162 +760,40 @@
                             <span>Microsoft CEO</span>
                         </div>
                     </div>
-                    <p class="quote-text">实现AI潜力需要"必要条件"——主要是吸引投资和建设支撑性基础设施。</p>
+                    <p class="quote-text">Davos 2026: Nvidia CEO Jensen Huang on the future of AI</p>
                     <div class="quote-meta">
-                        <span>达沃斯论坛 | 1月22日</span>
-                        <a href="https://www.euronews.com/next/2026/01/20/ai-at-davos-2026-from-work-to-useful-and-safe-ai-heres-what-the-tech-leaders-have-said" target="_blank" class="quote-source">查看来源</a>
+                        <span>2月</span>
+                        <a href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.weforum.org%2Fstories%2F2026%2F01%2Fnvidia%2Dceo%2Djensen%2Dhuang%2Don%2Dthe%2Dfuture%2Dof%2Dai%2F&amp;rut=74566037caebd9938c65b8b105f7d04eaefe2097a6079aa2bce3928307100876" target="_blank" class="quote-source">查看来源</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Forums Section -->
-        <section class="forum-section" id="forums">
-            <div class="section-title">
-                <h2>&#127919; 顶级科技论坛动态</h2>
-                <span class="badge hot">本周进行中</span>
-            </div>
-            <div class="forum-grid">
-                <div class="forum-card">
-                    <div class="forum-header">
-                        <h3>达沃斯世界经济论坛 2026</h3>
-                        <span>1月20日 - 23日 | 瑞士达沃斯</span>
-                    </div>
-                    <div class="forum-body">
-                        <div class="forum-highlight">
-                            <h4>核心主题：智能工业化</h4>
-                            <p>AI从投机性"噪音"转向战略性"信号"，成为重塑金融、能源、房地产和全球治理的"超级系统"</p>
-                        </div>
-                        <div class="forum-highlight">
-                            <h4>AGI时间表辩论</h4>
-                            <p>Musk vs Hassabis vs Amodei 三方激辩，时间预测从12个月到10年不等</p>
-                        </div>
-                        <div class="forum-highlight">
-                            <h4>就业影响警告</h4>
-                            <p>IMF总裁：40%工作岗位受影响；Amodei：50%初级白领工作1-5年内消失</p>
-                        </div>
-                        <a href="https://www.weforum.org/stories/2026/01/why-scaling-ai-feels-hard-and-what-to-do-about-it/" target="_blank" class="forum-link">查看详细报道 &#8594;</a>
-                    </div>
-                </div>
-
-                <div class="forum-card">
-                    <div class="forum-header" style="background: linear-gradient(135deg, #ef4444 0%, #f59e0b 100%);">
-                        <h3>CES 2026 消费电子展</h3>
-                        <span>1月7日 - 10日 | 美国拉斯维加斯</span>
-                    </div>
-                    <div class="forum-body">
-                        <div class="forum-highlight">
-                            <h4>NVIDIA Vera Rubin平台</h4>
-                            <p>6款新芯片，吞吐量提升10倍，token成本降低10倍</p>
-                        </div>
-                        <div class="forum-highlight">
-                            <h4>Physical AI成为焦点</h4>
-                            <p>AI从数字生成工具转向嵌入硬件、机器人和自主系统</p>
-                        </div>
-                        <div class="forum-highlight">
-                            <h4>西门子×NVIDIA合作</h4>
-                            <p>发布工业AI操作系统，首个AI驱动工厂蓝图将在德国落地</p>
-                        </div>
-                        <a href="https://wccftech.com/best/a-look-at-the-biggest-ai-announcements-at-ces-2026/" target="_blank" class="forum-link">查看详细报道 &#8594;</a>
-                    </div>
-                </div>
-
-                <div class="forum-card">
-                    <div class="forum-header" style="background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);">
-                        <h3>AAAI 2026 人工智能大会</h3>
-                        <span>1月20日 - 27日 | 新加坡</span>
-                    </div>
-                    <div class="forum-body">
-                        <div class="forum-highlight">
-                            <h4>第40届AAAI年会</h4>
-                            <p>全球顶级AI学术会议，聚焦AI基础研究和前沿应用</p>
-                        </div>
-                        <div class="forum-highlight">
-                            <h4>研究热点</h4>
-                            <p>多模态学习、AI安全、可解释AI、自主代理系统</p>
-                        </div>
-                        <a href="https://aaai.org/conference/aaai/aaai-26/" target="_blank" class="forum-link">查看会议详情 &#8594;</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- This Week Timeline -->
-        <section>
-            <div class="section-title">
-                <h2>&#128197; 本周大事时间线</h2>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item current">
-                    <div class="timeline-date">1月27日 (今天)</div>
-                    <div class="timeline-content">
-                        <h4>AAAI 2026最后一天</h4>
-                        <p>新加坡AAAI大会闭幕，AI学术研究成果集中发布</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">1月25日</div>
-                    <div class="timeline-content">
-                        <h4>Big Tech财报季开启</h4>
-                        <p>2026年AI赢家仍是悬念，市场关注各大公司AI投资回报</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">1月23日</div>
-                    <div class="timeline-content">
-                        <h4>达沃斯论坛闭幕 | Musk首秀</h4>
-                        <p>Musk与BlackRock CEO Larry Fink对话；AGI时间表大辩论</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">1月22日</div>
-                    <div class="timeline-content">
-                        <h4>IMF发布AI就业影响警告</h4>
-                        <p>总裁Georgieva称40%工作岗位受AI影响</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">1月20日</div>
-                    <div class="timeline-content">
-                        <h4>达沃斯论坛 & AAAI开幕</h4>
-                        <p>AI成为达沃斯核心议题；OpenAI推出年龄预测模型</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">1月21日</div>
-                    <div class="timeline-content">
-                        <h4>OpenAI签署可再生能源协议</h4>
-                        <p>为数据中心扩张确保长期电力供应</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Market Stats -->
+        <!-- Stats -->
         <section>
             <div class="section-title">
                 <h2>&#128202; 市场数据概览</h2>
             </div>
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-value">$2.5T</div>
+                    <div class="stat-value">$2.5T+</div>
                     <div class="stat-label">2026年AI支出预测</div>
-                    <div class="stat-change up">&#9650; 44% YoY</div>
+                    <div class="stat-change up">持续增长</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">82%</div>
-                    <div class="stat-label">CEO对AI更乐观</div>
-                    <div class="stat-change">BCG调查</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">50%</div>
-                    <div class="stat-label">CEO认为职位取决于AI</div>
-                    <div class="stat-change">BCG AI Radar</div>
+                    <div class="stat-value">85%+</div>
+                    <div class="stat-label">企业采用AI</div>
+                    <div class="stat-change">全球趋势</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-value">40%</div>
-                    <div class="stat-label">工作岗位受AI影响</div>
-                    <div class="stat-change">IMF警告</div>
+                    <div class="stat-label">工作岗位受影响</div>
+                    <div class="stat-change">IMF预测</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">24/7</div>
+                    <div class="stat-label">实时更新</div>
+                    <div class="stat-change">自动抓取</div>
                 </div>
             </div>
         </section>
@@ -1166,109 +807,98 @@
             <div class="news-grid">
                 <article class="news-card">
                     <div class="news-card-header">
-                        <span class="news-category category-finance">银行</span>
-                        <span class="news-date"><span class="new-badge">NEW</span> 1月</span>
+                        <span class="news-category category-finance">金融</span>
+                        <span class="news-date"><span class="new-badge">NEW</span> 2月</span>
                     </div>
                     <div class="news-card-body">
-                        <h3><a href="https://fintech.global/2026/01/07/where-banks-will-invest-in-generative-and-agentic-ai-in-2026/" target="_blank">银行2026年生成式AI与Agentic AI投资方向</a></h3>
-                        <p class="news-summary">82%的银行合规和风险负责人预计AI投资将增长超过25%。AI已从实验性技术转变为金融犯罪和合规策略的核心组件。</p>
+                        <h3><a href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.forbes.com%2Fsites%2Fjosipamajic%2F2025%2F12%2F17%2Fthe%2D83%2Dbillion%2Dai%2Dbanking%2Drevolution%2Dand%2Dhow%2Dai%2Dis%2Drewriting%2Dthe%2Drules%2Dof%2Dfinance%2F&amp;rut=35f2b1f5aa945453ac1edf8df40ef63abd68bc80215a979892419186573c267a" target="_blank">The $83 Billion AI Banking Revolution And How AI Is Rewriting ... - Forbes</a></h3>
                     </div>
                     <div class="news-card-footer">
                         <span class="news-source">
-                            <span class="source-icon">FG</span>
-                            Fintech Global
+                            <span class="source-icon">AI</span>
+                            AI News
                         </span>
-                        <a href="https://fintech.global/2026/01/07/where-banks-will-invest-in-generative-and-agentic-ai-in-2026/" target="_blank" class="read-more">阅读原文 &#8594;</a>
+                        <a href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.forbes.com%2Fsites%2Fjosipamajic%2F2025%2F12%2F17%2Fthe%2D83%2Dbillion%2Dai%2Dbanking%2Drevolution%2Dand%2Dhow%2Dai%2Dis%2Drewriting%2Dthe%2Drules%2Dof%2Dfinance%2F&amp;rut=35f2b1f5aa945453ac1edf8df40ef63abd68bc80215a979892419186573c267a" target="_blank" class="read-more">阅读原文 &#8594;</a>
                     </div>
                 </article>
-
                 <article class="news-card">
                     <div class="news-card-header">
-                        <span class="news-category category-finance">Agentic AI</span>
-                        <span class="news-date">1月</span>
+                        <span class="news-category category-finance">金融</span>
+                        <span class="news-date"><span class="new-badge">NEW</span> 2月</span>
                     </div>
                     <div class="news-card-body">
-                        <h3><a href="https://techinformed.com/agentic-ai-and-more-to-reshape-fintech-in-2026/" target="_blank">Mastercard：2026年代理原生商务将成主流</a></h3>
-                        <p class="news-summary">首席产品官Jorn Lambert表示AI代理将代表消费者完成研究、谈判和安全购买。Wells Fargo高管指出Agentic AI在合规领域可节省数百万美元。</p>
+                        <h3><a href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fbankingjournal.aba.com%2F2026%2F01%2Fbanking%2Don%2Dai%2F&amp;rut=cd0f79469d390548b9f72e6da60ce57b9abf2a613f82fcf180182a3c8a385cdb" target="_blank">Banking on AI | ABA Banking Journal</a></h3>
                     </div>
                     <div class="news-card-footer">
                         <span class="news-source">
-                            <span class="source-icon">TI</span>
-                            TechInformed
+                            <span class="source-icon">AI</span>
+                            AI News
                         </span>
-                        <a href="https://techinformed.com/agentic-ai-and-more-to-reshape-fintech-in-2026/" target="_blank" class="read-more">阅读原文 &#8594;</a>
+                        <a href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fbankingjournal.aba.com%2F2026%2F01%2Fbanking%2Don%2Dai%2F&amp;rut=cd0f79469d390548b9f72e6da60ce57b9abf2a613f82fcf180182a3c8a385cdb" target="_blank" class="read-more">阅读原文 &#8594;</a>
                     </div>
                 </article>
-
                 <article class="news-card">
                     <div class="news-card-header">
-                        <span class="news-category category-investment">股票</span>
-                        <span class="news-date">1月</span>
+                        <span class="news-category category-finance">金融</span>
+                        <span class="news-date"><span class="new-badge">NEW</span> 2月</span>
                     </div>
                     <div class="news-card-body">
-                        <h3><a href="https://finance.yahoo.com/news/3-financial-stocks-making-big-175500563.html" target="_blank">三大金融股AI布局：JPMorgan、PayPal、Robinhood</a></h3>
-                        <p class="news-summary">摩根大通部署Agentic AI协助完成投行pitch deck。PayPal发布与PYUSD稳定币相关的AI公告。Robinhood推出AI投资工具。</p>
+                        <h3><a href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.bloomberg.com%2Fnews%2Farticles%2F2026%2D01%2D30%2Fai%2Dboom%2Draises%2Dstakes%2Din%2Dfallout%2Dfrom%2Dregional%2Dbanking%2Dcollapse&amp;rut=1ddadf37ceca35b624068b2947c762c149f698c78f9f006ef2912814856dd4bb" target="_blank">AI Boom Raises Stakes in Fallout From Regional Banking Collapse</a></h3>
                     </div>
                     <div class="news-card-footer">
                         <span class="news-source">
-                            <span class="source-icon">YF</span>
-                            Yahoo Finance
+                            <span class="source-icon">AI</span>
+                            AI News
                         </span>
-                        <a href="https://finance.yahoo.com/news/3-financial-stocks-making-big-175500563.html" target="_blank" class="read-more">阅读原文 &#8594;</a>
+                        <a href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.bloomberg.com%2Fnews%2Farticles%2F2026%2D01%2D30%2Fai%2Dboom%2Draises%2Dstakes%2Din%2Dfallout%2Dfrom%2Dregional%2Dbanking%2Dcollapse&amp;rut=1ddadf37ceca35b624068b2947c762c149f698c78f9f006ef2912814856dd4bb" target="_blank" class="read-more">阅读原文 &#8594;</a>
                     </div>
                 </article>
-
                 <article class="news-card">
                     <div class="news-card-header">
-                        <span class="news-category category-finance">调查报告</span>
-                        <span class="news-date">1月</span>
+                        <span class="news-category category-finance">金融</span>
+                        <span class="news-date"><span class="new-badge">NEW</span> 2月</span>
                     </div>
                     <div class="news-card-body">
-                        <h3><a href="https://blogs.nvidia.com/blog/ai-in-financial-services-survey-2026/" target="_blank">NVIDIA金融服务AI调查：从试点到盈利</a></h3>
-                        <p class="news-summary">800+行业专业人士调查显示，52%受访者表示AI最大改进是运营效率，48%认为是员工生产力。83%认为开源对AI策略至关重要。</p>
+                        <h3><a href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.forbes.com%2Fsites%2Fdavidparker%2F2024%2F10%2F03%2Fthe%2Dfuture%2Dof%2Dai%2Din%2Dfinancial%2Dservices%2F&amp;rut=986d0e7b00d690efb2a2f0b56d2a0e52e58678b355edb4e00294d25197674183" target="_blank">The Future Of AI In Financial Services - Forbes</a></h3>
                     </div>
                     <div class="news-card-footer">
                         <span class="news-source">
-                            <span class="source-icon">NV</span>
-                            NVIDIA Blog
+                            <span class="source-icon">AI</span>
+                            AI News
                         </span>
-                        <a href="https://blogs.nvidia.com/blog/ai-in-financial-services-survey-2026/" target="_blank" class="read-more">阅读原文 &#8594;</a>
+                        <a href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.forbes.com%2Fsites%2Fdavidparker%2F2024%2F10%2F03%2Fthe%2Dfuture%2Dof%2Dai%2Din%2Dfinancial%2Dservices%2F&amp;rut=986d0e7b00d690efb2a2f0b56d2a0e52e58678b355edb4e00294d25197674183" target="_blank" class="read-more">阅读原文 &#8594;</a>
                     </div>
                 </article>
-
                 <article class="news-card">
                     <div class="news-card-header">
-                        <span class="news-category category-investment">IPO/M&A</span>
-                        <span class="news-date">1月</span>
+                        <span class="news-category category-finance">金融</span>
+                        <span class="news-date"><span class="new-badge">NEW</span> 2月</span>
                     </div>
                     <div class="news-card-body">
-                        <h3><a href="https://www.qedinvestors.com/blog/2026-fintech-and-venture-capital-predictions" target="_blank">2026年金融科技第二波IPO潮来袭</a></h3>
-                        <p class="news-summary">继Circle、Klarna和Chime之后，Plaid、Revolut、Monzo、Airwallex和Rapyd有望上市。M&A活动加速，金融科技相互收购整合市场份额。</p>
+                        <h3><a href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.insightpartners.com%2Fideas%2Fai%2Din%2Dfinancial%2Dservices%2F&amp;rut=c377d70e1d65d302336ae8f2f9b3c8c0eb6f4200b8dcb0a7ff3c1bdb17f40571" target="_blank">AI in financial services is here: How firms are adopting and where they ...</a></h3>
                     </div>
                     <div class="news-card-footer">
                         <span class="news-source">
-                            <span class="source-icon">QED</span>
-                            QED Investors
+                            <span class="source-icon">AI</span>
+                            AI News
                         </span>
-                        <a href="https://www.qedinvestors.com/blog/2026-fintech-and-venture-capital-predictions" target="_blank" class="read-more">阅读原文 &#8594;</a>
+                        <a href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.insightpartners.com%2Fideas%2Fai%2Din%2Dfinancial%2Dservices%2F&amp;rut=c377d70e1d65d302336ae8f2f9b3c8c0eb6f4200b8dcb0a7ff3c1bdb17f40571" target="_blank" class="read-more">阅读原文 &#8594;</a>
                     </div>
                 </article>
-
                 <article class="news-card">
                     <div class="news-card-header">
-                        <span class="news-category category-finance">行业趋势</span>
-                        <span class="news-date">1月</span>
+                        <span class="news-category category-finance">金融</span>
+                        <span class="news-date"><span class="new-badge">NEW</span> 2月</span>
                     </div>
                     <div class="news-card-body">
-                        <h3><a href="https://www.bankingdive.com/news/2026-banking-trends-artificial-intelligence-ai-mergers-acquisitions-regulation-bank-charters/808818/" target="_blank">2026年银行业四大趋势：AI领衔</a></h3>
-                        <p class="news-summary">摩根大通计划用AI取代代理顾问，高盛希望用AI"完全重塑"流程。领先银行预计今年将看到AI投资回报。</p>
+                        <h3><a href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.microsoft.com%2Fen%2Dus%2Findustry%2Fblog%2Ffinancial%2Dservices%2F2025%2F12%2F18%2Fai%2Dtransformation%2Din%2Dfinancial%2Dservices%2D5%2Dpredictors%2Dfor%2Dsuccess%2Din%2D2026%2F&amp;rut=8c4ac8b9757511ef1894f7bc267a68b0ccce5e779caef631218ce96776b67a2b" target="_blank">AI transformation in financial services: 5 predictors for success in ...</a></h3>
                     </div>
                     <div class="news-card-footer">
                         <span class="news-source">
-                            <span class="source-icon">BD</span>
-                            Banking Dive
+                            <span class="source-icon">AI</span>
+                            AI News
                         </span>
-                        <a href="https://www.bankingdive.com/news/2026-banking-trends-artificial-intelligence-ai-mergers-acquisitions-regulation-bank-charters/808818/" target="_blank" class="read-more">阅读原文 &#8594;</a>
+                        <a href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.microsoft.com%2Fen%2Dus%2Findustry%2Fblog%2Ffinancial%2Dservices%2F2025%2F12%2F18%2Fai%2Dtransformation%2Din%2Dfinancial%2Dservices%2D5%2Dpredictors%2Dfor%2Dsuccess%2Din%2D2026%2F&amp;rut=8c4ac8b9757511ef1894f7bc267a68b0ccce5e779caef631218ce96776b67a2b" target="_blank" class="read-more">阅读原文 &#8594;</a>
                     </div>
                 </article>
             </div>
@@ -1280,173 +910,100 @@
                 <h2>&#127758; 全球AI产品与技术动态</h2>
             </div>
             <div class="news-grid">
-                <article class="news-card featured">
-                    <div class="news-card-header">
-                        <span class="news-category category-tech">CES 2026</span>
-                        <span class="news-date"><span class="new-badge">HOT</span> 1月</span>
-                    </div>
-                    <div class="news-card-body">
-                        <h3><a href="https://wccftech.com/best/a-look-at-the-biggest-ai-announcements-at-ces-2026/" target="_blank">CES 2026：NVIDIA Vera Rubin平台发布</a></h3>
-                        <p class="news-summary">6款新芯片包括Vera CPU、Rubin GPU，相比Grace Blackwell吞吐量提升10倍，token成本降低10倍。"Physical AI"成为最大热词。</p>
-                    </div>
-                    <div class="news-card-footer">
-                        <span class="news-source">
-                            <span class="source-icon">WC</span>
-                            Wccftech
-                        </span>
-                        <a href="https://wccftech.com/best/a-look-at-the-biggest-ai-announcements-at-ces-2026/" target="_blank" class="read-more">阅读原文 &#8594;</a>
-                    </div>
-                </article>
-
                 <article class="news-card">
                     <div class="news-card-header">
-                        <span class="news-category category-product">OpenAI</span>
-                        <span class="news-date"><span class="new-badge">NEW</span> 1月20日</span>
+                        <span class="news-category category-tech">科技</span>
+                        <span class="news-date">2月</span>
                     </div>
                     <div class="news-card-body">
-                        <h3><a href="https://www.cnbc.com/2026/01/20/open-ai-age-prediction-chatgpt.html" target="_blank">OpenAI推出年龄预测模型保护未成年人</a></h3>
-                        <p class="news-summary">新模型结合账户级信号和行为信号识别18岁以下用户。检测到未成年用户后，ChatGPT将自动应用保护措施减少敏感内容暴露。</p>
+                        <h3><a href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fintellizence.com%2Finsights%2Fgenerative%2Dai%2Fmajor%2Dproduct%2Dlaunches%2Dand%2Dpartnerships%2F&amp;rut=4da8e5fd0a99cf23873198711c2d3aa710e4c0b90ad9b28075f41562dd5ccc41" target="_blank">Generative AI - Major Product Launches and Partnerships</a></h3>
                     </div>
                     <div class="news-card-footer">
                         <span class="news-source">
-                            <span class="source-icon">CN</span>
-                            CNBC
+                            <span class="source-icon">AI</span>
+                            Tech News
                         </span>
-                        <a href="https://www.cnbc.com/2026/01/20/open-ai-age-prediction-chatgpt.html" target="_blank" class="read-more">阅读原文 &#8594;</a>
+                        <a href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fintellizence.com%2Finsights%2Fgenerative%2Dai%2Fmajor%2Dproduct%2Dlaunches%2Dand%2Dpartnerships%2F&amp;rut=4da8e5fd0a99cf23873198711c2d3aa710e4c0b90ad9b28075f41562dd5ccc41" target="_blank" class="read-more">阅读原文 &#8594;</a>
                     </div>
                 </article>
-
                 <article class="news-card">
                     <div class="news-card-header">
-                        <span class="news-category category-product">ChatGPT</span>
-                        <span class="news-date">1月7日</span>
+                        <span class="news-category category-tech">科技</span>
+                        <span class="news-date">2月</span>
                     </div>
                     <div class="news-card-body">
-                        <h3><a href="https://techcrunch.com/2026/01/07/openai-unveils-chatgpt-health-says-230-million-users-ask-about-health-each-week/" target="_blank">ChatGPT Health：2.3亿用户每周咨询健康问题</a></h3>
-                        <p class="news-summary">用户可安全连接Apple Health、MyFitnessPal等应用，获取个性化健康建议、实验室结果解读。健康对话不会用于训练模型。</p>
+                        <h3><a href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.business%2Dstandard.com%2Ftechnology%2Ftech%2Dnews%2Fjony%2Dive%2Dopenai%2Dfirst%2Dai%2Dgadget%2Dlaunch%2D2026%2Dfeatures%2D126012000651_1.html&amp;rut=d2944b257a6f6a6326b1a5b11216220f70534dbcbe473402dcb9b922d150e99f" target="_blank">Jony Ive and OpenAI&#x27;s first AI gadget may launch in 2026: What to ...</a></h3>
                     </div>
                     <div class="news-card-footer">
                         <span class="news-source">
-                            <span class="source-icon">TC</span>
-                            TechCrunch
+                            <span class="source-icon">AI</span>
+                            Tech News
                         </span>
-                        <a href="https://techcrunch.com/2026/01/07/openai-unveils-chatgpt-health-says-230-million-users-ask-about-health-each-week/" target="_blank" class="read-more">阅读原文 &#8594;</a>
+                        <a href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.business%2Dstandard.com%2Ftechnology%2Ftech%2Dnews%2Fjony%2Dive%2Dopenai%2Dfirst%2Dai%2Dgadget%2Dlaunch%2D2026%2Dfeatures%2D126012000651_1.html&amp;rut=d2944b257a6f6a6326b1a5b11216220f70534dbcbe473402dcb9b922d150e99f" target="_blank" class="read-more">阅读原文 &#8594;</a>
                     </div>
                 </article>
-
                 <article class="news-card">
                     <div class="news-card-header">
-                        <span class="news-category category-tech">CES 2026</span>
-                        <span class="news-date">1月</span>
+                        <span class="news-category category-tech">科技</span>
+                        <span class="news-date">2月</span>
                     </div>
                     <div class="news-card-body">
-                        <h3><a href="https://www.ces.tech/articles/ces-2026-day-one-highlights-innovation-accessibility-and-community/" target="_blank">西门子×NVIDIA：工业AI操作系统发布</a></h3>
-                        <p class="news-summary">结合NVIDIA的AI基础设施、仿真和Omniverse工具与西门子工业软件，首个AI驱动工厂蓝图将于2026年在德国西门子电子工厂落地。</p>
+                        <h3><a href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.airmeet.com%2Fhub%2Fblog%2Fhow%2Dai%2Dhas%2Dtransformed%2Dthe%2Dproduct%2Dlaunches%2Dprogram%2F&amp;rut=4e122b4b9faeb9acf4848d0865c9bb55d693bdc6a730a59dbd3781938aacf92b" target="_blank">How AI has transformed the Product Launches Program</a></h3>
                     </div>
                     <div class="news-card-footer">
                         <span class="news-source">
-                            <span class="source-icon">CES</span>
-                            CES
+                            <span class="source-icon">AI</span>
+                            Tech News
                         </span>
-                        <a href="https://www.ces.tech/articles/ces-2026-day-one-highlights-innovation-accessibility-and-community/" target="_blank" class="read-more">阅读原文 &#8594;</a>
+                        <a href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.airmeet.com%2Fhub%2Fblog%2Fhow%2Dai%2Dhas%2Dtransformed%2Dthe%2Dproduct%2Dlaunches%2Dprogram%2F&amp;rut=4e122b4b9faeb9acf4848d0865c9bb55d693bdc6a730a59dbd3781938aacf92b" target="_blank" class="read-more">阅读原文 &#8594;</a>
                     </div>
                 </article>
-
                 <article class="news-card">
                     <div class="news-card-header">
-                        <span class="news-category category-tech">芯片</span>
-                        <span class="news-date">1月</span>
+                        <span class="news-category category-tech">科技</span>
+                        <span class="news-date">2月</span>
                     </div>
                     <div class="news-card-body">
-                        <h3><a href="https://www.intc.com/news-events/press-releases/detail/1757/ces-2026-intel-core-ultra-series-3-debuts-as-first-built" target="_blank">Intel Core Ultra Series 3：首款Intel 18A芯片</a></h3>
-                        <p class="news-summary">基于美国最先进半导体工艺Intel 18A打造，首次通过测试认证用于机器人、智慧城市、自动化、医疗等边缘场景。</p>
+                        <h3><a href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.reuters.com%2Ftechnology%2Fartificial%2Dintelligence%2F&amp;rut=81aa1051ab87b9ea020266e1faa6e32847a77de6f54f57b016110564fc8c5364" target="_blank">AI News | Latest Headlines and Developments | Reuters</a></h3>
                     </div>
                     <div class="news-card-footer">
                         <span class="news-source">
-                            <span class="source-icon">INT</span>
-                            Intel
+                            <span class="source-icon">AI</span>
+                            Tech News
                         </span>
-                        <a href="https://www.intc.com/news-events/press-releases/detail/1757/ces-2026-intel-core-ultra-series-3-debuts-as-first-built" target="_blank" class="read-more">阅读原文 &#8594;</a>
+                        <a href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.reuters.com%2Ftechnology%2Fartificial%2Dintelligence%2F&amp;rut=81aa1051ab87b9ea020266e1faa6e32847a77de6f54f57b016110564fc8c5364" target="_blank" class="read-more">阅读原文 &#8594;</a>
                     </div>
                 </article>
-
                 <article class="news-card">
                     <div class="news-card-header">
-                        <span class="news-category category-investment">市场</span>
-                        <span class="news-date">1月</span>
+                        <span class="news-category category-tech">科技</span>
+                        <span class="news-date">2月</span>
                     </div>
                     <div class="news-card-body">
-                        <h3><a href="https://hbr.org/2026/01/hb-how-executives-are-thinking-about-ai-heading-into-2026" target="_blank">HBR调查：高管如何看待2026年AI</a></h3>
-                        <p class="news-summary">几乎所有数据和AI领导者都认为AI是高优先级，计划增加支出，并确认公司正在从AI投资中获得可衡量的商业价值。</p>
+                        <h3><a href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fnews.google.com%2Ftopics%2FCAAqJAgKIh5DQkFTRUFvSEwyMHZNRzFyZWhJRlpXNHRSMElvQUFQAQ&amp;rut=7df4106e445c9d2bb43ad743bb3df94058ca856b0c2e037b449c99de5274ce8e" target="_blank">Google News - Artificial intelligence - Latest</a></h3>
                     </div>
                     <div class="news-card-footer">
                         <span class="news-source">
-                            <span class="source-icon">HBR</span>
-                            Harvard Business Review
+                            <span class="source-icon">AI</span>
+                            Tech News
                         </span>
-                        <a href="https://hbr.org/2026/01/hb-how-executives-are-thinking-about-ai-heading-into-2026" target="_blank" class="read-more">阅读原文 &#8594;</a>
+                        <a href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fnews.google.com%2Ftopics%2FCAAqJAgKIh5DQkFTRUFvSEwyMHZNRzFyZWhJRlpXNHRSMElvQUFQAQ&amp;rut=7df4106e445c9d2bb43ad743bb3df94058ca856b0c2e037b449c99de5274ce8e" target="_blank" class="read-more">阅读原文 &#8594;</a>
                     </div>
                 </article>
-            </div>
-        </section>
-
-        <!-- Regulation Section -->
-        <section id="regulation">
-            <div class="section-title">
-                <h2>&#9878;&#65039; 监管与法律动态</h2>
-            </div>
-            <div class="news-grid">
                 <article class="news-card">
                     <div class="news-card-header">
-                        <span class="news-category category-regulation">SEC</span>
-                        <span class="news-date">1月</span>
+                        <span class="news-category category-tech">科技</span>
+                        <span class="news-date">2月</span>
                     </div>
                     <div class="news-card-body">
-                        <h3><a href="https://nysba.org/regulating-ai-deception-in-financial-markets-how-the-sec-can-combat-ai-washing-through-aggressive-enforcement/" target="_blank">SEC打击金融市场"AI洗白"行为</a></h3>
-                        <p class="news-summary">企业虚假宣传AI能力的"AI洗白"趋势令人担忧。SEC加强执法力度，投资者依赖准确的技术整合描述做出知情决策。</p>
+                        <h3><a href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.artificialintelligence%2Dnews.com%2F&amp;rut=e19732b0d2c3d05c178dcf56cc417896cb0cc6238354e90ede52481e59023df5" target="_blank">AI News | Latest News | Insights Powering AI-Driven Business Growth</a></h3>
                     </div>
                     <div class="news-card-footer">
                         <span class="news-source">
-                            <span class="source-icon">NY</span>
-                            NYSBA
+                            <span class="source-icon">AI</span>
+                            Tech News
                         </span>
-                        <a href="https://nysba.org/regulating-ai-deception-in-financial-markets-how-the-sec-can-combat-ai-washing-through-aggressive-enforcement/" target="_blank" class="read-more">阅读原文 &#8594;</a>
-                    </div>
-                </article>
-
-                <article class="news-card">
-                    <div class="news-card-header">
-                        <span class="news-category category-regulation">版权诉讼</span>
-                        <span class="news-date">1月5日</span>
-                    </div>
-                    <div class="news-card-body">
-                        <h3><a href="https://natlawreview.com/article/openai-loses-privacy-gambit-20-million-chatgpt-logs-likely-headed-copyright" target="_blank">OpenAI须提交2000万条ChatGPT日志</a></h3>
-                        <p class="news-summary">联邦法官确认命令OpenAI在AI版权诉讼中提交2000万条匿名日志。原告专家将分析合理使用、市场损害和输出性质的证据。</p>
-                    </div>
-                    <div class="news-card-footer">
-                        <span class="news-source">
-                            <span class="source-icon">NL</span>
-                            National Law Review
-                        </span>
-                        <a href="https://natlawreview.com/article/openai-loses-privacy-gambit-20-million-chatgpt-logs-likely-headed-copyright" target="_blank" class="read-more">阅读原文 &#8594;</a>
-                    </div>
-                </article>
-
-                <article class="news-card">
-                    <div class="news-card-header">
-                        <span class="news-category category-regulation">加密货币</span>
-                        <span class="news-date">1月</span>
-                    </div>
-                    <div class="news-card-body">
-                        <h3><a href="https://www.bostonglobe.com/2025/12/30/business/ai-bots-banking-stablecoins-crypto-fintech/" target="_blank">五家加密公司获初步银行牌照批准</a></h3>
-                        <p class="news-summary">Circle、Ripple Labs获批，Coinbase、PayPal和Mercury也已提交申请。亲加密的监管环境推动金融科技发展。</p>
-                    </div>
-                    <div class="news-card-footer">
-                        <span class="news-source">
-                            <span class="source-icon">BG</span>
-                            Boston Globe
-                        </span>
-                        <a href="https://www.bostonglobe.com/2025/12/30/business/ai-bots-banking-stablecoins-crypto-fintech/" target="_blank" class="read-more">阅读原文 &#8594;</a>
+                        <a href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.artificialintelligence%2Dnews.com%2F&amp;rut=e19732b0d2c3d05c178dcf56cc417896cb0cc6238354e90ede52481e59023df5" target="_blank" class="read-more">阅读原文 &#8594;</a>
                     </div>
                 </article>
             </div>
@@ -1458,114 +1015,46 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>关于本站</h4>
-                    <p>AI资讯中心汇集全球最新人工智能资讯，重点关注金融行业应用和大咖言论，帮助您把握AI发展趋势。</p>
+                    <p>AI资讯中心汇集全球最新人工智能资讯，重点关注金融行业应用和大咖言论。</p>
                     <p style="margin-top: 12px; color: var(--accent);">每日自动更新 | 关注周期: 最近7天</p>
-                </div>
-                <div class="footer-section">
-                    <h4>重点论坛</h4>
-                    <a href="https://www.weforum.org" target="_blank">达沃斯世界经济论坛</a>
-                    <a href="https://www.ces.tech" target="_blank">CES消费电子展</a>
-                    <a href="https://aaai.org" target="_blank">AAAI人工智能大会</a>
-                    <a href="https://nips.cc" target="_blank">NeurIPS</a>
                 </div>
                 <div class="footer-section">
                     <h4>资讯来源</h4>
                     <a href="https://www.cnbc.com" target="_blank">CNBC</a>
                     <a href="https://techcrunch.com" target="_blank">TechCrunch</a>
-                    <a href="https://fortune.com" target="_blank">Fortune</a>
+                    <a href="https://www.reuters.com" target="_blank">Reuters</a>
                     <a href="https://www.bloomberg.com" target="_blank">Bloomberg</a>
                 </div>
                 <div class="footer-section">
                     <h4>免责声明</h4>
-                    <p>内容由AI自动整理生成</p>
+                    <p>内容由自动化程序整理生成</p>
                     <p>仅供参考，不构成投资建议</p>
-                    <p>请以官方来源为准</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 AI资讯中心 | 最后更新: 2026年1月27日 | 自动更新周期: 每日</p>
+                <p>&copy; 2026 AI资讯中心 | 最后更新: 2026年2月2日 | GitHub Actions 自动更新</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Auto-update countdown timer
         function updateCountdown() {
             const now = new Date();
             const tomorrow = new Date(now);
             tomorrow.setDate(tomorrow.getDate() + 1);
-            tomorrow.setHours(8, 0, 0, 0); // Next update at 8:00 AM
-
+            tomorrow.setHours(8, 0, 0, 0);
             if (now >= tomorrow) {
                 tomorrow.setDate(tomorrow.getDate() + 1);
             }
-
             const diff = tomorrow - now;
             const hours = Math.floor(diff / (1000 * 60 * 60));
             const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
             document.getElementById('countdown').textContent =
-                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0');
         }
-
-        // Update week range display
-        function updateWeekRange() {
-            const now = new Date();
-            const weekStart = new Date(now);
-            weekStart.setDate(now.getDate() - 6);
-
-            const formatDate = (date) => {
-                return `${date.getMonth() + 1}月${date.getDate()}日`;
-            };
-
-            document.getElementById('weekRange').textContent =
-                `本周关注: ${formatDate(weekStart)} - ${formatDate(now)}`;
-        }
-
-        // Update last update time
-        function updateLastUpdateTime() {
-            const now = new Date();
-            const year = now.getFullYear();
-            const month = now.getMonth() + 1;
-            const day = now.getDate();
-            const hours = now.getHours().toString().padStart(2, '0');
-            const minutes = now.getMinutes().toString().padStart(2, '0');
-
-            document.getElementById('lastUpdate').textContent =
-                `${year}年${month}月${day}日 ${hours}:${minutes}`;
-        }
-
-        // Initialize
         updateCountdown();
-        updateWeekRange();
-        updateLastUpdateTime();
-
-        // Update countdown every second
         setInterval(updateCountdown, 1000);
-
-        // Smooth scroll for navigation
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                if (href.startsWith('#')) {
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth' });
-                    }
-
-                    // Update active state
-                    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-                    this.classList.add('active');
-                }
-            });
-        });
-
-        // Simulated auto-refresh notification
-        console.log('AI资讯中心已启动自动更新功能');
-        console.log('更新周期: 每日 08:00');
-        console.log('关注范围: 最近7天');
     </script>
 </body>
 </html>
