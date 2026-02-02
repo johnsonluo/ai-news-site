@@ -9,11 +9,20 @@ import os
 import re
 from datetime import datetime, timedelta
 from urllib.request import urlopen, Request
-from urllib.parse import quote_plus
+from urllib.parse import quote_plus, unquote
 import ssl
 
 # Disable SSL verification for simplicity
 ssl._create_default_https_context = ssl._create_unverified_context
+
+def extract_real_url(duckduckgo_url):
+    """Extract real URL from DuckDuckGo redirect URL"""
+    # DuckDuckGo URLs look like: //duckduckgo.com/l/?uddg=https%3A%2F%2Fexample.com&rut=...
+    if 'uddg=' in duckduckgo_url:
+        match = re.search(r'uddg=([^&]+)', duckduckgo_url)
+        if match:
+            return unquote(match.group(1))
+    return duckduckgo_url
 
 def search_news(query, num_results=10):
     """Search for news using DuckDuckGo HTML"""
@@ -35,11 +44,13 @@ def search_news(query, num_results=10):
         pattern = r'<a[^>]*class="result__a"[^>]*href="([^"]*)"[^>]*>([^<]*)</a>'
         matches = re.findall(pattern, html)
 
-        for url, title in matches[:num_results]:
+        for raw_url, title in matches[:num_results]:
             if title.strip():
+                # Extract real URL from DuckDuckGo redirect
+                real_url = extract_real_url(raw_url)
                 results.append({
                     'title': title.strip(),
-                    'url': url
+                    'url': real_url
                 })
 
         return results
@@ -354,6 +365,23 @@ def generate_html(news_data, date_info):
 
         .key-points .point-tag.new {{
             background: var(--success);
+        }}
+
+        .key-points .point-link {{
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin-left: 12px;
+            white-space: nowrap;
+        }}
+
+        .key-points .point-link:hover {{
+            color: var(--accent);
+            text-decoration: underline;
+        }}
+
+        .key-points .point-text strong:hover {{
+            color: var(--primary);
         }}
 
         .news-grid {{
@@ -733,8 +761,9 @@ def generate_html(news_data, date_info):
         html += f'''                <li>
                     <span class="bullet">{i}</span>
                     <span class="point-text">
-                        <strong>{item['title']}</strong>
+                        <a href="{item['url']}" target="_blank" style="color: inherit; text-decoration: none;"><strong>{item['title']}</strong></a>
                         <span class="point-tag {tag_class}">{tag_text}</span>
+                        <a href="{item['url']}" target="_blank" class="point-link">阅读原文 &#8594;</a>
                     </span>
                 </li>
 '''
