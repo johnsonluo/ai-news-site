@@ -941,28 +941,28 @@ def main():
         'global_news': []
     }
 
-    # Search queries
+    # Search queries - using Chinese keywords for Chinese news
     queries = {
         'highlights': [
-            "AI artificial intelligence news today",
-            "ChatGPT OpenAI latest news",
-            "AI breakthrough announcement"
+            "人工智能 AI 最新新闻 2026",
+            "ChatGPT OpenAI 最新动态",
+            "AI 突破 科技新闻"
         ],
         'vip_news': [
-            "Sam Altman OpenAI statement",
-            "Jensen Huang NVIDIA AI",
-            "Sundar Pichai Google AI",
-            "Satya Nadella Microsoft AI"
+            "Sam Altman OpenAI 声明 发言",
+            "黄仁勋 英伟达 NVIDIA AI",
+            "Sundar Pichai 谷歌 AI",
+            "Satya Nadella 微软 AI"
         ],
         'finance_news': [
-            "AI fintech banking news",
-            "AI investment financial services",
-            "AI trading stock market news"
+            "AI 金融科技 银行 新闻",
+            "人工智能 投资 金融服务",
+            "AI 交易 股市 资讯"
         ],
         'global_news': [
-            "AI technology product launch",
-            "artificial intelligence company news",
-            "AI startup funding news"
+            "AI 产品发布 科技",
+            "人工智能 公司 新闻动态",
+            "AI 初创公司 融资"
         ]
     }
 
