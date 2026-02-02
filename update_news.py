@@ -30,8 +30,8 @@ def search_news(query, num_results=10):
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'
     }
 
-    # Use DuckDuckGo HTML search
-    url = f"https://html.duckduckgo.com/html/?q={quote_plus(query)}"
+    # Use DuckDuckGo HTML search with time filter (df=w for past week)
+    url = f"https://html.duckduckgo.com/html/?q={quote_plus(query)}&df=w"
 
     try:
         req = Request(url, headers=headers)
@@ -970,28 +970,34 @@ def main():
         'global_news': []
     }
 
-    # Search queries - using Chinese keywords for Chinese news
+    # Get current date for search queries
+    now = datetime.now()
+    current_month = now.month
+    current_year = now.year
+
+    # Search queries - using Chinese keywords with current date for latest news
     queries = {
         'highlights': [
-            "人工智能 AI 最新新闻 2026",
-            "ChatGPT OpenAI 最新动态",
-            "AI 突破 科技新闻"
+            f"AI人工智能 重大突破 {current_year}年{current_month}月",
+            f"OpenAI ChatGPT GPT-5 最新发布 {current_year}",
+            f"AI大模型 发布 新闻 {current_year}年{current_month}月",
+            "DeepSeek Claude Gemini 最新动态"
         ],
         'vip_news': [
-            "Sam Altman OpenAI 声明 发言",
-            "黄仁勋 英伟达 NVIDIA AI",
-            "Sundar Pichai 谷歌 AI",
-            "Satya Nadella 微软 AI"
+            f"Sam Altman OpenAI 最新发言 {current_year}",
+            f"黄仁勋 Jensen Huang NVIDIA 演讲 {current_year}",
+            f"马斯克 Elon Musk AI xAI {current_year}",
+            f"李彦宏 百度 文心一言 {current_year}"
         ],
         'finance_news': [
-            "AI 金融科技 银行 新闻",
-            "人工智能 投资 金融服务",
-            "AI 交易 股市 资讯"
+            f"AI金融 银行 大模型应用 {current_year}年{current_month}月",
+            f"人工智能 量化交易 投资 {current_year}",
+            f"AI风控 智能投顾 金融科技 {current_year}"
         ],
         'global_news': [
-            "AI 产品发布 科技",
-            "人工智能 公司 新闻动态",
-            "AI 初创公司 融资"
+            f"AI芯片 GPU 算力 最新 {current_year}年{current_month}月",
+            f"人工智能 融资 独角兽 {current_year}",
+            f"AI产品 发布会 科技公司 {current_year}年{current_month}月"
         ]
     }
 
